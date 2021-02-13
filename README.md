@@ -1,5 +1,5 @@
 # BusbyFootball
-Displayes the reviews of local tourist locations
+Displayes the player and leagues of popular football teams
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f64d96a99f1a89a4d3d5/maintainability)](https://codeclimate.com/github/steve1rm/BusbyFootball/maintainability)
 
