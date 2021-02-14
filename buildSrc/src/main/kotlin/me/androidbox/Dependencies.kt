@@ -21,6 +21,10 @@ object Libraries {
     const val rxKotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.rxkotlinVersion}"
     const val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroidVersion}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.corektxVersion}"
+
+    const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompatVersion}"
+    const val material = "com.google.android.material:material:${Versions.materialVersion}"
+    const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayoutVersion}"
 }
 
 object TestLibraries {
@@ -28,4 +32,8 @@ object TestLibraries {
     const val truth = "com.google.truth:truth:${Versions.truthVersion}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTestingVersion}"
     const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlinVersion}"
+
+
+    const val extJunit = "androidx.test.ext:junit:${Versions.androidxJunitVersion}"
+    const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
 }
