@@ -20,3 +20,7 @@ jobs:
 
       - name: Build Project
         run: ./gradlew assemble
+
+      - name: Test Coverage
+        uses: codecov/codecov-action@v1
+
