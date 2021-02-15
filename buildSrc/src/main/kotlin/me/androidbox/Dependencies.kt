@@ -25,6 +25,8 @@ object Libraries {
     const val appcompat = "androidx.appcompat:appcompat:${Versions.appcompatVersion}"
     const val material = "com.google.android.material:material:${Versions.materialVersion}"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintlayoutVersion}"
+    const val dagger = "com.google.dagger:dagger:${Versions.daggerVersion}"
+    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.daggerVersion}"
 }
 
 object TestLibraries {
@@ -32,8 +34,7 @@ object TestLibraries {
     const val truth = "com.google.truth:truth:${Versions.truthVersion}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTestingVersion}"
     const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlinVersion}"
-
-
+    const val assertjCore = "org.assertj:assertj-core:${Versions.assertJCoreVersion}"
     const val extJunit = "androidx.test.ext:junit:${Versions.androidxJunitVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
 }

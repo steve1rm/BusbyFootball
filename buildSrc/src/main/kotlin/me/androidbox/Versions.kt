@@ -21,7 +21,7 @@ object Versions {
     const val retrofitVersion = "2.9.0"
     const val moshiVersion = "1.11.0"
     const val converterMoshiVersion = "2.9.0"
-    const val daggerAndroidVersion = "2.21"
+    const val daggerVersion = "2.32"
     const val okhttpVersion = "3.12.1"
     const val rxjavaVersion = "3.0.10"
     const val rxAndroidVersion = "3.0.0"
@@ -54,5 +54,6 @@ object Versions {
     const val idlingConcurrentVersion = "3.1.0"
     const val espressoIdlingResourceVersion = "3.1.1"
     const val kakaoVersion = "2.3.0"
+    const val assertJCoreVersion = "3.19.0"
 
 }
