@@ -1,6 +1,7 @@
 plugins {
     id(me.androidbox.Plugins.androidApplication)
     kotlin(me.androidbox.Plugins.kotlinAndroid)
+    kotlin(me.androidbox.Plugins.kotlinKapt)
 }
 
 android {
@@ -18,8 +19,13 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        getByName("debug") {
             isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+
+        getByName("release") {
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
@@ -37,6 +43,8 @@ dependencies {
     implementation(me.androidbox.Libraries.coreKtx)
     implementation(me.androidbox.Libraries.appcompat)
     implementation(me.androidbox.Libraries.material)
+    implementation(me.androidbox.Libraries.dagger)
+    kapt(me.androidbox.Libraries.daggerCompiler)
 
     implementation(me.androidbox.Libraries.constraintlayout)
     testImplementation(me.androidbox.TestLibraries.junit)
