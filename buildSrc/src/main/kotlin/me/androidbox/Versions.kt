@@ -15,6 +15,7 @@ object Versions {
     const val corektxVersion = "1.3.2"
     const val materialVersion = "1.3.0"
     const val constraintlayoutVersion = "2.0.4"
+    const val gradleAndroidJunitJacocoPluginVersion = "0.16.0"
 
     /** Third party */
     const val timberVersion = "4.7.1"

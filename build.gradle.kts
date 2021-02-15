@@ -9,7 +9,7 @@ buildscript {
     dependencies {
         classpath(me.androidbox.Plugins.kotlinGradlePlugin)
         classpath(me.androidbox.Plugins.androidGradlePlugin)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+        classpath(me.androidbox.Plugins.gradleAndroidJunitJacocoPlugin)
     }
 }
 
@@ -23,3 +23,5 @@ allprojects {
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
+
+apply(plugin = "com.vanniktech.android.junit.jacoco")
