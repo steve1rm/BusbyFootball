@@ -23,4 +23,6 @@ jobs:
 
       - name: Test Coverage
         run: ./gradlew jacocoTestReportDebug
+
+      - name: Update Test Coverage
         uses: codecov/codecov-action@v1
