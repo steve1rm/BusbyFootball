@@ -3,6 +3,8 @@ package me.androidbox
 object Plugins {
     const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinVersion}"
     const val androidGradlePlugin = "com.android.tools.build:gradle:${Versions.gradleVersion}"
+    const val gradleAndroidJunitJacocoPlugin = "com.vanniktech:gradle-android-junit-jacoco-plugin:${Versions.gradleAndroidJunitJacocoPluginVersion}"
+
     const val androidApplication = "com.android.application"
     const val androidLibrary = "com.android.library"
     const val kotlinAndroid = "android"
