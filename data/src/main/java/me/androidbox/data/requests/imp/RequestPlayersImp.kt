@@ -7,8 +7,9 @@ import me.androidbox.data.mappers.DomainMapper
 import me.androidbox.data.service.FootballServices
 import me.androidbox.domain.models.PlayerModel
 import me.androidbox.domain.interactors.PlayersInteractor
+import javax.inject.Inject
 
-class RequestPlayersImp(private val footballServices: FootballServices,
+class RequestPlayersImp @Inject constructor(private val footballServices: FootballServices,
                         private val domainMapper: DomainMapper<PlayerDataEntity, List<PlayerModel>>
 ) : PlayersInteractor {
 
