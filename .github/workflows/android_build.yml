@@ -22,6 +22,5 @@ jobs:
         run: ./gradlew assemble
 
       - name: Test Coverage
-        - uses: actions/checkout@master
-        - uses: codecov/codecov-action@v1
-
+        run: ./gradlew jacocoTestReportDebug
+        uses: codecov/codecov-action@v1
