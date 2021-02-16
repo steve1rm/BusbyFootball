@@ -39,6 +39,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":data"))
+
     implementation(me.androidbox.Libraries.kotlinStdlib)
     implementation(me.androidbox.Libraries.coreKtx)
     implementation(me.androidbox.Libraries.appcompat)
