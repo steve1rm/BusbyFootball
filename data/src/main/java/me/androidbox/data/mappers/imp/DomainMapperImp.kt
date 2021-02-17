@@ -2,7 +2,6 @@ package me.androidbox.data.mappers.imp
 
 import me.androidbox.data.entities.PlayerDataEntity
 import me.androidbox.data.entities.PlayerEntity
-import me.androidbox.data.mappers.DomainMapper
 import me.androidbox.data.mappers.DomainMapperEntityToDomain
 import me.androidbox.domain.models.PlayerModel
 import javax.inject.Inject
@@ -32,7 +31,7 @@ class DomainMapperImp @Inject constructor(): DomainMapperEntityToDomain {
     }
 
     /** Usage:
-     *  return entity.data.map(::entityToModelList).first() */
+     *  return entity.data.map(::entityToModelList).first()
     private fun entityToModelList(playerEntity: PlayerEntity): List<PlayerModel> {
         val listOfPlayers = mutableListOf<PlayerModel>()
 
@@ -48,4 +47,5 @@ class DomainMapperImp @Inject constructor(): DomainMapperEntityToDomain {
 
         return listOfPlayers.toList()
     }
+    */
 }
