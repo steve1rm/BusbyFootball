@@ -22,5 +22,5 @@ interface PlayerModule {
     fun provideFootballServices(mockFootballServices: MockFootballServices): FootballServices
 
     @Binds
-    fun provideDomainMapper(domainMapperImp: DomainMapperImp): DomainMapper<PlayerDataEntity, List<PlayerModel>>
+    fun provideDomainMapper(domainMapperImp: DomainMapperImp): DomainMapperEntityToDomain
 }
