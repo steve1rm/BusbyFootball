@@ -7,6 +7,7 @@ import io.reactivex.rxjava3.core.Single
 import me.androidbox.data.BuildConfig
 import me.androidbox.data.entities.PlayerDataEntity
 import me.androidbox.data.mappers.DomainMapper
+import me.androidbox.data.mappers.DomainMapperEntityToDomain
 import me.androidbox.data.mappers.imp.DomainMapperImp
 import me.androidbox.data.mockdata.PlayerFactory
 import me.androidbox.data.service.FootballServices
@@ -18,7 +19,7 @@ class RequestPlayersImpTest {
 
     private lateinit var requestPlayersImp: RequestPlayersImp
     private val footballServices: FootballServices = mock()
-    private lateinit var domainMapper: DomainMapper<PlayerDataEntity, List<PlayerModel>>
+    private lateinit var domainMapper: DomainMapperEntityToDomain
 
     @Before
     fun setUp() {
@@ -33,7 +34,7 @@ class RequestPlayersImpTest {
                 .thenReturn(Single.just(PlayerDataEntity(data = emptyList())))
 
         // Act
-        val actualPlayerModel = requestPlayersImp.invoke()
+        val actualPlayerModel = requestPlayersImp.invoke(42)
                 .test()
 
         // Assert
@@ -50,7 +51,7 @@ class RequestPlayersImpTest {
             .thenReturn(Single.just(playerDataEntity))
 
         // Act
-        val actualPlayerModel = requestPlayersImp.invoke()
+        val actualPlayerModel = requestPlayersImp.invoke(42)
             .test()
 
         // Assert
