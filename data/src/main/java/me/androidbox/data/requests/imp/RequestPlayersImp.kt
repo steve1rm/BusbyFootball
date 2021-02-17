@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 class RequestPlayersImp @Inject constructor(
         private val footballServices: FootballServices,
-        private val domainMapper: DomainMapperEntityToDomain
+        private val domainMapper: DomainMapper<PlayerDataEntity, List<PlayerModel>>
 ) : PlayersInteractor {
 
     override fun invoke(countryId: Int): Single<List<PlayerModel>> {

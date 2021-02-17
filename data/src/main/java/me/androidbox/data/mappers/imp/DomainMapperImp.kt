@@ -7,7 +7,7 @@ import me.androidbox.data.mappers.DomainMapperEntityToDomain
 import me.androidbox.domain.models.PlayerModel
 import javax.inject.Inject
 
-class DomainMapperImp @Inject constructor(): DomainMapperEntityToDomain {
+class DomainMapperImp @Inject constructor(): DomainMapper<PlayerDataEntity, List<PlayerModel>> {
 
     override fun mapToDomain(entity: PlayerDataEntity): List<PlayerModel> {
         val listOfPlayers = mutableListOf<PlayerModel>()
