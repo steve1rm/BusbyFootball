@@ -5,6 +5,7 @@ import me.androidbox.data.entities.PlayerDataEntity
 import me.androidbox.service.Endpoints
 import retrofit2.http.GET
 import retrofit2.http.Query
+import javax.inject.Inject
 
 interface FootballServices {
 
@@ -12,4 +13,17 @@ interface FootballServices {
     fun getListOfPlayersByCountryId(
             @Query("apikey") apiKey: String,
             @Query("counter_id") countryId: Int) : Single<PlayerDataEntity>
+}
+
+
+class MockFootballServices @Inject constructor() : FootballServices {
+    override fun getListOfPlayersByCountryId(
+        apiKey: String,
+        countryId: Int
+    ): Single<PlayerDataEntity> {
+        return Single.just(
+            PlayerDataEntity(
+            data = emptyList()
+        ))
+    }
 }

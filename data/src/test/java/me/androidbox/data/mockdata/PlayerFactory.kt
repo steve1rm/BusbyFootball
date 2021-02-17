@@ -17,12 +17,33 @@ object PlayerFactory {
         )
     }
 
+    fun createPlayerEntityNullValues(): PlayerEntity {
+        return PlayerEntity(
+                RandomDataFactory.int(),
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        )
+    }
+
     fun createPlayerDataEntity(): PlayerDataEntity {
         return PlayerDataEntity(
             listOf(
                 createPlayerEntity(),
                 createPlayerEntity(),
                 createPlayerEntity())
+        )
+    }
+
+    fun createPlayerDataEntityNullValues(): PlayerDataEntity {
+        return PlayerDataEntity(
+                listOf(
+                        createPlayerEntityNullValues(),
+                        createPlayerEntityNullValues(),
+                        createPlayerEntityNullValues())
         )
     }
 }

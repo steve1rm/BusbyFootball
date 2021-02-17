@@ -4,5 +4,5 @@ import io.reactivex.rxjava3.core.Single
 import me.androidbox.domain.models.PlayerModel
 
 interface PlayersInteractor {
-    operator fun invoke(): Single<List<PlayerModel>>
+    operator fun invoke(countryId: Int): Single<List<PlayerModel>>
 }

@@ -1,6 +1,6 @@
 package me.androidbox.domain.models
 
-class PlayerModel(
+data class PlayerModel(
     val playerId: Int,
     val firstname: String,
     val lastname: String,
