@@ -4,6 +4,6 @@ import com.squareup.moshi.JsonClass
 import javax.inject.Inject
 
 @JsonClass(generateAdapter = true)
-class PlayerDataEntity(
-        val data: List<PlayerEntity>
+class PlayerDataModel(
+        val data: List<PlayerModel>
 )
