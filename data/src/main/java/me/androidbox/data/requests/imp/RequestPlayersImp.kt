@@ -13,7 +13,7 @@ class RequestPlayersImp @Inject constructor(
         private val domainMapper: DomainMapperEntityToDomain
 ) : PlayersInteractor {
 
-    override fun invoke(countryId: Int): Single<List<PlayerEntity>> {
+    override fun getListOfPlayersByCountryId(countryId: Int): Single<List<PlayerEntity>> {
         return footballServices.getListOfPlayersByCountryId(BuildConfig.SPORTDATA_API_KEY, 42)
                 .map { playerDataModel ->
                     domainMapper.mapToDomain(playerDataModel)

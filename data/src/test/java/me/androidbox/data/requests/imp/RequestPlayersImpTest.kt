@@ -32,7 +32,7 @@ class RequestPlayersImpTest {
                 .thenReturn(Single.just(PlayerDataModel(data = emptyList())))
 
         // Act
-        val actualPlayerModel = requestPlayersImp.invoke(42)
+        val actualPlayerModel = requestPlayersImp.getListOfPlayersByCountryId(42)
                 .test()
 
         // Assert
@@ -49,7 +49,7 @@ class RequestPlayersImpTest {
             .thenReturn(Single.just(playerDataEntity))
 
         // Act
-        val actualPlayerModel = requestPlayersImp.invoke(42)
+        val actualPlayerModel = requestPlayersImp.getListOfPlayersByCountryId(42)
             .test()
 
         // Assert
