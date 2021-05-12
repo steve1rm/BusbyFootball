@@ -1,4 +1,4 @@
-package me.androidbox.service
+package me.androidbox.data.service
 
 // https://app.sportdataapi.com
 
