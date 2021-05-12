@@ -1,4 +1,4 @@
-package me.androidbox.data.entities
+package me.androidbox.data.models
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

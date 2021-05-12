@@ -1,8 +1,8 @@
 package me.androidbox.data.service
 
 import io.reactivex.rxjava3.core.Single
-import me.androidbox.data.entities.PlayerDataModel
-import me.androidbox.data.entities.PlayerModel
+import me.androidbox.data.models.PlayerDataModel
+import me.androidbox.data.models.PlayerModel
 import me.androidbox.service.Endpoints
 import retrofit2.http.GET
 import retrofit2.http.Query

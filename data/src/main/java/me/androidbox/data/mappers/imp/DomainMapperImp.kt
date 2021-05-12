@@ -1,9 +1,9 @@
 package me.androidbox.data.mappers.imp
 
-import me.androidbox.data.entities.PlayerDataModel
-import me.androidbox.data.entities.PlayerModel
+import me.androidbox.data.models.PlayerDataModel
+import me.androidbox.data.models.PlayerModel
 import me.androidbox.data.mappers.DomainMapperEntityToDomain
-import me.androidbox.domain.models.PlayerEntity
+import me.androidbox.domain.entities.PlayerEntity
 import javax.inject.Inject
 
 class DomainMapperImp @Inject constructor(): DomainMapperEntityToDomain {

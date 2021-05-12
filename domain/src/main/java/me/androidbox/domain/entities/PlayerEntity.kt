@@ -1,4 +1,4 @@
-package me.androidbox.domain.models
+package me.androidbox.domain.entities
 
 data class PlayerEntity(
     val playerId: Int,

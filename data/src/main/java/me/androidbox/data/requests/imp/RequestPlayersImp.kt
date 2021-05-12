@@ -5,7 +5,7 @@ import me.androidbox.data.BuildConfig
 import me.androidbox.data.mappers.DomainMapperEntityToDomain
 import me.androidbox.data.service.FootballServices
 import me.androidbox.domain.interactors.PlayersInteractor
-import me.androidbox.domain.models.PlayerEntity
+import me.androidbox.domain.entities.PlayerEntity
 import javax.inject.Inject
 
 class RequestPlayersImp @Inject constructor(

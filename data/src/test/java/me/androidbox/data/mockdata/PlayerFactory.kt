@@ -1,7 +1,7 @@
 package me.androidbox.data.mockdata
 
-import me.androidbox.data.entities.PlayerDataModel
-import me.androidbox.data.entities.PlayerModel
+import me.androidbox.data.models.PlayerDataModel
+import me.androidbox.data.models.PlayerModel
 
 object PlayerFactory {
 

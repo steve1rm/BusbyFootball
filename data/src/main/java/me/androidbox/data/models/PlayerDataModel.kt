@@ -1,7 +1,6 @@
-package me.androidbox.data.entities
+package me.androidbox.data.models
 
 import com.squareup.moshi.JsonClass
-import javax.inject.Inject
 
 @JsonClass(generateAdapter = true)
 class PlayerDataModel(

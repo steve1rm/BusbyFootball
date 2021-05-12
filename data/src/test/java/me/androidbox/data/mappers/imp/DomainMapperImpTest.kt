@@ -1,7 +1,7 @@
 package me.androidbox.data.mappers.imp
 
 import com.google.common.truth.Truth.assertThat
-import me.androidbox.data.entities.PlayerDataModel
+import me.androidbox.data.models.PlayerDataModel
 import me.androidbox.data.mockdata.PlayerFactory
 import org.junit.Before
 import org.junit.Test

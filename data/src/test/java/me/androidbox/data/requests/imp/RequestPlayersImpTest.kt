@@ -5,7 +5,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.rxjava3.core.Single
 import me.androidbox.data.BuildConfig
-import me.androidbox.data.entities.PlayerDataModel
+import me.androidbox.data.models.PlayerDataModel
 import me.androidbox.data.mappers.DomainMapperEntityToDomain
 import me.androidbox.data.mappers.imp.DomainMapperImp
 import me.androidbox.data.mockdata.PlayerFactory
