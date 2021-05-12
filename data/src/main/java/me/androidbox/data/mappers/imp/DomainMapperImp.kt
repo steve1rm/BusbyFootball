@@ -1,32 +1,32 @@
 package me.androidbox.data.mappers.imp
 
-import me.androidbox.data.entities.PlayerDataEntity
-import me.androidbox.data.entities.PlayerEntity
+import me.androidbox.data.models.PlayerDataModel
+import me.androidbox.data.models.PlayerModel
 import me.androidbox.data.mappers.DomainMapperEntityToDomain
-import me.androidbox.domain.models.PlayerModel
+import me.androidbox.domain.entities.PlayerEntity
 import javax.inject.Inject
 
 class DomainMapperImp @Inject constructor(): DomainMapperEntityToDomain {
 
-    override fun mapToDomain(entity: PlayerDataEntity): List<PlayerModel> {
-        val listOfPlayers = mutableListOf<PlayerModel>()
+    override fun mapToDomain(model: PlayerDataModel): List<PlayerEntity> {
+        val listOfPlayers = mutableListOf<PlayerEntity>()
 
-        entity.data.map {
-            listOfPlayers.add(entityToModel(it))
+        model.data.map {
+            listOfPlayers.add(modelToEntity(it))
         }
 
         return listOfPlayers.toList()
     }
 
-    private fun entityToModel(playerEntity: PlayerEntity): PlayerModel {
-        return PlayerModel(
-            playerEntity.playerId,
-            playerEntity.firstName ?: "",
-            playerEntity.lastName ?: "",
-            playerEntity.birthday ?: "",
-            playerEntity.age ?: 0,
-            playerEntity.weight ?: 0,
-            playerEntity.height ?: 0
+    private fun modelToEntity(playerModel: PlayerModel): PlayerEntity {
+        return PlayerEntity(
+            playerModel.playerId,
+            playerModel.firstName ?: "",
+            playerModel.lastName ?: "",
+            playerModel.birthday ?: "",
+            playerModel.age ?: 0,
+            playerModel.weight ?: 0,
+            playerModel.height ?: 0
         )
     }
 

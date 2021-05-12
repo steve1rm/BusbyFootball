@@ -5,13 +5,11 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.rxjava3.core.Single
 import me.androidbox.data.BuildConfig
-import me.androidbox.data.entities.PlayerDataEntity
-import me.androidbox.data.mappers.DomainMapper
+import me.androidbox.data.models.PlayerDataModel
 import me.androidbox.data.mappers.DomainMapperEntityToDomain
 import me.androidbox.data.mappers.imp.DomainMapperImp
 import me.androidbox.data.mockdata.PlayerFactory
 import me.androidbox.data.service.FootballServices
-import me.androidbox.domain.models.PlayerModel
 import org.junit.Before
 import org.junit.Test
 
@@ -31,10 +29,10 @@ class RequestPlayersImpTest {
     fun `should return a list of empty player models when endpoint has no player data`() {
         // Arrange
         whenever(footballServices.getListOfPlayersByCountryId(BuildConfig.SPORTDATA_API_KEY, 42))
-                .thenReturn(Single.just(PlayerDataEntity(data = emptyList())))
+                .thenReturn(Single.just(PlayerDataModel(data = emptyList())))
 
         // Act
-        val actualPlayerModel = requestPlayersImp.invoke(42)
+        val actualPlayerModel = requestPlayersImp.getListOfPlayersByCountryId(42)
                 .test()
 
         // Assert
@@ -45,13 +43,13 @@ class RequestPlayersImpTest {
     @Test
     fun `should return a list of player models when endpoint has player data`() {
         // Arrange
-        val playerDataEntity = PlayerFactory.createPlayerDataEntity()
+        val playerDataEntity = PlayerFactory.createPlayerDataModel()
 
         whenever(footballServices.getListOfPlayersByCountryId(BuildConfig.SPORTDATA_API_KEY, 42))
             .thenReturn(Single.just(playerDataEntity))
 
         // Act
-        val actualPlayerModel = requestPlayersImp.invoke(42)
+        val actualPlayerModel = requestPlayersImp.getListOfPlayersByCountryId(42)
             .test()
 
         // Assert

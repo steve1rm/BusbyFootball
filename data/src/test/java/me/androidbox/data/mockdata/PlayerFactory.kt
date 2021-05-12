@@ -1,12 +1,12 @@
 package me.androidbox.data.mockdata
 
-import me.androidbox.data.entities.PlayerDataEntity
-import me.androidbox.data.entities.PlayerEntity
+import me.androidbox.data.models.PlayerDataModel
+import me.androidbox.data.models.PlayerModel
 
 object PlayerFactory {
 
-    fun createPlayerEntity(): PlayerEntity {
-        return PlayerEntity(
+    fun createPlayerModel(): PlayerModel {
+        return PlayerModel(
             RandomDataFactory.int(),
             RandomDataFactory.string(),
             RandomDataFactory.string(),
@@ -17,8 +17,8 @@ object PlayerFactory {
         )
     }
 
-    fun createPlayerEntityNullValues(): PlayerEntity {
-        return PlayerEntity(
+    fun createPlayerModelNullValues(): PlayerModel {
+        return PlayerModel(
                 RandomDataFactory.int(),
                 null,
                 null,
@@ -29,21 +29,21 @@ object PlayerFactory {
         )
     }
 
-    fun createPlayerDataEntity(): PlayerDataEntity {
-        return PlayerDataEntity(
+    fun createPlayerDataModel(): PlayerDataModel {
+        return PlayerDataModel(
             listOf(
-                createPlayerEntity(),
-                createPlayerEntity(),
-                createPlayerEntity())
+                createPlayerModel(),
+                createPlayerModel(),
+                createPlayerModel())
         )
     }
 
-    fun createPlayerDataEntityNullValues(): PlayerDataEntity {
-        return PlayerDataEntity(
+    fun createPlayerDataModelNullValues(): PlayerDataModel {
+        return PlayerDataModel(
                 listOf(
-                        createPlayerEntityNullValues(),
-                        createPlayerEntityNullValues(),
-                        createPlayerEntityNullValues())
+                        createPlayerModelNullValues(),
+                        createPlayerModelNullValues(),
+                        createPlayerModelNullValues())
         )
     }
 }

@@ -1,6 +1,6 @@
 package me.androidbox.data.mappers
 
-import me.androidbox.data.entities.PlayerDataEntity
-import me.androidbox.domain.models.PlayerModel
+import me.androidbox.data.models.PlayerDataModel
+import me.androidbox.domain.entities.PlayerEntity
 
-interface DomainMapperEntityToDomain : DomainMapper<PlayerDataEntity, List<PlayerModel>>
+interface DomainMapperEntityToDomain : DomainMapper<PlayerDataModel, List<PlayerEntity>>

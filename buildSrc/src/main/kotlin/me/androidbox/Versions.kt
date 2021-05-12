@@ -1,3 +1,4 @@
+
 package me.androidbox
 
 object Versions {
@@ -10,7 +11,7 @@ object Versions {
     const val versionCode = 1
     const val versionName = "1.0"
     const val kotlinVersion = "1.4.30"
-    const val gradleVersion = "4.1.2"
+    const val gradleVersion = "4.2.0"
     const val appcompatVersion = "1.2.0"
     const val corektxVersion = "1.3.2"
     const val materialVersion = "1.3.0"
