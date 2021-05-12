@@ -43,7 +43,7 @@ class RequestPlayersImpTest {
     @Test
     fun `should return a list of player models when endpoint has player data`() {
         // Arrange
-        val playerDataEntity = PlayerFactory.createPlayerDataEntity()
+        val playerDataEntity = PlayerFactory.createPlayerDataModel()
 
         whenever(footballServices.getListOfPlayersByCountryId(BuildConfig.SPORTDATA_API_KEY, 42))
             .thenReturn(Single.just(playerDataEntity))

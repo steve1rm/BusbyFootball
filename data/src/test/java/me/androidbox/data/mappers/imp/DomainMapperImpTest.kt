@@ -30,7 +30,7 @@ class DomainMapperImpTest {
     @Test
     fun `should return a list of playerModel when there are player entities`() {
         // Arrange
-        val playerDataEntity = PlayerFactory.createPlayerDataEntity()
+        val playerDataEntity = PlayerFactory.createPlayerDataModel()
 
         // Act
         val actualPlayerModel = domainMapperImp.mapToDomain(playerDataEntity)
@@ -49,7 +49,7 @@ class DomainMapperImpTest {
     @Test
     fun `should return a list of empty list of playerModel when there are player entities `() {
         // Arrange
-        val playerDataEntity = PlayerFactory.createPlayerDataEntityNullValues()
+        val playerDataEntity = PlayerFactory.createPlayerDataModelNullValues()
 
         // Act
         val actualPlayerModel = domainMapperImp.mapToDomain(playerDataEntity)

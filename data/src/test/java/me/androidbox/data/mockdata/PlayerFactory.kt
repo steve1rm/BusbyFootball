@@ -5,7 +5,7 @@ import me.androidbox.data.entities.PlayerModel
 
 object PlayerFactory {
 
-    fun createPlayerEntity(): PlayerModel {
+    fun createPlayerModel(): PlayerModel {
         return PlayerModel(
             RandomDataFactory.int(),
             RandomDataFactory.string(),
@@ -17,7 +17,7 @@ object PlayerFactory {
         )
     }
 
-    fun createPlayerEntityNullValues(): PlayerModel {
+    fun createPlayerModelNullValues(): PlayerModel {
         return PlayerModel(
                 RandomDataFactory.int(),
                 null,
@@ -29,21 +29,21 @@ object PlayerFactory {
         )
     }
 
-    fun createPlayerDataEntity(): PlayerDataModel {
+    fun createPlayerDataModel(): PlayerDataModel {
         return PlayerDataModel(
             listOf(
-                createPlayerEntity(),
-                createPlayerEntity(),
-                createPlayerEntity())
+                createPlayerModel(),
+                createPlayerModel(),
+                createPlayerModel())
         )
     }
 
-    fun createPlayerDataEntityNullValues(): PlayerDataModel {
+    fun createPlayerDataModelNullValues(): PlayerDataModel {
         return PlayerDataModel(
                 listOf(
-                        createPlayerEntityNullValues(),
-                        createPlayerEntityNullValues(),
-                        createPlayerEntityNullValues())
+                        createPlayerModelNullValues(),
+                        createPlayerModelNullValues(),
+                        createPlayerModelNullValues())
         )
     }
 }

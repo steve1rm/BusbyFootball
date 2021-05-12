@@ -5,7 +5,6 @@ import me.androidbox.TestLibraries.mockitoKotlin
 import me.androidbox.TestLibraries.truth
 
 plugins {
-    id(me.androidbox.Plugins.javaLibrary)
     id(me.androidbox.Plugins.kotlin)
 }
 

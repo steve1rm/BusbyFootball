@@ -15,8 +15,8 @@ class RequestPlayersImp @Inject constructor(
 
     override fun invoke(countryId: Int): Single<List<PlayerEntity>> {
         return footballServices.getListOfPlayersByCountryId(BuildConfig.SPORTDATA_API_KEY, 42)
-                .map {
-                    domainMapper.mapToDomain(it)
+                .map { playerDataModel ->
+                    domainMapper.mapToDomain(playerDataModel)
                 }
     }
 }
