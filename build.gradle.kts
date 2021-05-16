@@ -3,6 +3,7 @@ buildscript {
 
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
 
@@ -10,12 +11,14 @@ buildscript {
         classpath(me.androidbox.Plugins.kotlinGradlePlugin)
         classpath(me.androidbox.Plugins.androidGradlePlugin)
         classpath(me.androidbox.Plugins.gradleAndroidJunitJacocoPlugin)
+        classpath(me.androidbox.Plugins.navigationSafeArgsGradlePlugin)
     }
 }
 
 allprojects {
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
 }

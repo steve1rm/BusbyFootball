@@ -1,7 +1,9 @@
+
 plugins {
     id(me.androidbox.Plugins.androidApplication)
     kotlin(me.androidbox.Plugins.kotlinAndroid)
     kotlin(me.androidbox.Plugins.kotlinKapt)
+    id(me.androidbox.Plugins.androidxNavigationSafeArgs)
 }
 
 android {
@@ -9,7 +11,7 @@ android {
     buildToolsVersion(me.androidbox.Versions.buildToolsVersion)
 
     defaultConfig {
-        applicationId = "me.androidbox.presentation"
+        applicationId = "me.androidbox.home"
         minSdkVersion(me.androidbox.Versions.minSdkVersion)
         targetSdkVersion(me.androidbox.Versions.targetSdkVersion)
         versionCode = 1
@@ -38,19 +40,29 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    kapt {
+        /* epoxy */
+        correctErrorTypes = true
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
-    implementation(project(":data"))
-
     implementation(me.androidbox.Libraries.kotlinStdlib)
     implementation(me.androidbox.Libraries.coreKtx)
     implementation(me.androidbox.Libraries.appcompat)
     implementation(me.androidbox.Libraries.material)
     implementation(me.androidbox.Libraries.dagger)
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementation(me.androidbox.Libraries.constraintlayout)
+    implementation(me.androidbox.Libraries.epoxy)
+    implementation(me.androidbox.Libraries.navigationUiKts)
+    implementation(me.androidbox.Libraries.navigationFragmentKts)
+
+    kapt(me.androidbox.Libraries.epoxyProcessor)
     kapt(me.androidbox.Libraries.daggerCompiler)
 
     implementation(me.androidbox.Libraries.constraintlayout)

@@ -35,6 +35,8 @@ object Versions {
     const val firebaseCrashlyticsVersion = "17.0.0-beta04"
     const val roomVersion = "2.2.5"
     const val rxpermissionsVersion = "0.11"
+    const val epoxyVersion = "4.6.1"
+    const val navigationVersion = "2.3.5"
 
     /** Testing */
     const val jUnitVersion = "4.13.1"
