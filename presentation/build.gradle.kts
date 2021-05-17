@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
     implementation(project(":data"))
 
     implementation(me.androidbox.Libraries.kotlinStdlib)
@@ -48,12 +49,10 @@ dependencies {
     implementation(me.androidbox.Libraries.appcompat)
     implementation(me.androidbox.Libraries.material)
     implementation(me.androidbox.Libraries.dagger)
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("com.google.android.material:material:1.3.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementation(me.androidbox.Libraries.constraintlayout)
+
     kapt(me.androidbox.Libraries.daggerCompiler)
 
-    implementation(me.androidbox.Libraries.constraintlayout)
     testImplementation(me.androidbox.TestLibraries.junit)
 
     androidTestImplementation(me.androidbox.TestLibraries.extJunit)

@@ -52,6 +52,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
+
     implementation(me.androidbox.Libraries.kotlinStdlib)
     implementation(me.androidbox.Libraries.coreKtx)
     implementation(me.androidbox.Libraries.appcompat)
