@@ -2,6 +2,6 @@
     <string name="app_name">Busby Football</string>
     <string name="fullName">%1$s %2$s</string>
     <string name="age">Age: %1$d</string>
-    <string name="height">Height: %1$.2f meters</string>
+    <string name="height">Height: %1$d meters</string>
     <string name="weight">Weight: %1$d kgs</string>
 </resources>

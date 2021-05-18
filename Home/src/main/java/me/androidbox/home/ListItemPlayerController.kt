@@ -1,15 +1,18 @@
 package me.androidbox.home
 
-import android.content.Context
 import com.airbnb.epoxy.TypedEpoxyController
 import me.androidbox.domain.entities.PlayerEntity
+import java.util.*
 
-class ListItemPlayerController(private val context: Context) : TypedEpoxyController<List<PlayerEntity>>() {
+class ListItemPlayerController : TypedEpoxyController<List<PlayerEntity>>() {
 
     override fun buildModels(data: List<PlayerEntity>?) {
-        data?.let {
-            ListItemPlayerModel_()
-                .context(context)
+        data?.let { listOfPlayers ->
+
+            listItemPlayer {
+                id(UUID.randomUUID().toString())
+                listOfPlayers(listOfPlayers)
+            }
         }
     }
 }
