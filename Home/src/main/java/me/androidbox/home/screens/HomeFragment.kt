@@ -1,4 +1,4 @@
-package me.androidbox.home
+package me.androidbox.home.screens
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import me.androidbox.domain.entities.PlayerEntity
+import me.androidbox.home.listitems.ListItemPlayerController
 import me.androidbox.home.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -23,7 +24,7 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        ListItemPlayerController= ListItemPlayerController()
+        ListItemPlayerController = ListItemPlayerController()
 
         with(fragmentHomeBinding.rvFootballList) {
             adapter = ListItemPlayerController.adapter

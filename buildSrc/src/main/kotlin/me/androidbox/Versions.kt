@@ -11,7 +11,7 @@ object Versions {
     const val versionCode = 1
     const val versionName = "1.0"
     const val kotlinVersion = "1.4.30"
-    const val gradleVersion = "4.2.0"
+    const val gradleVersion = "4.2.1"
     const val appcompatVersion = "1.2.0"
     const val corektxVersion = "1.3.2"
     const val materialVersion = "1.3.0"
@@ -30,7 +30,7 @@ object Versions {
     const val rxkotlinVersion = "3.0.1"
     const val recyclerViewVersion = "1.0.0"
     const val parcelerVersion = "1.1.12"
-    const val lifecycleVersion = "2.1.0"
+    const val lifecycleVersion = "2.3.1"
     const val firebaseCrashlyticsGradleVersion = "2.0.0-beta04"
     const val firebaseCrashlyticsVersion = "17.0.0-beta04"
     const val roomVersion = "2.2.5"

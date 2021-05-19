@@ -63,13 +63,17 @@ dependencies {
     implementation(me.androidbox.Libraries.epoxy)
     implementation(me.androidbox.Libraries.navigationUiKts)
     implementation(me.androidbox.Libraries.navigationFragmentKts)
+    implementation(me.androidbox.Libraries.liveDataKts)
+    implementation(me.androidbox.Libraries.viewModelKts)
+    implementation(me.androidbox.Libraries.constraintlayout)
+    implementation(me.androidbox.Libraries.rxJava)
+    implementation(me.androidbox.Libraries.rxKotlin)
+    implementation(me.androidbox.Libraries.rxAndroid)
 
     kapt(me.androidbox.Libraries.epoxyProcessor)
     kapt(me.androidbox.Libraries.daggerCompiler)
 
-    implementation(me.androidbox.Libraries.constraintlayout)
     testImplementation(me.androidbox.TestLibraries.junit)
-
     androidTestImplementation(me.androidbox.TestLibraries.extJunit)
     androidTestImplementation(me.androidbox.TestLibraries.espressoCore)
 }

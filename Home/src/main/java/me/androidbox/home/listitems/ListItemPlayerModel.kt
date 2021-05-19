@@ -1,11 +1,11 @@
-package me.androidbox.home
+package me.androidbox.home.listitems
 
 import android.annotation.SuppressLint
-import android.content.Context
 import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyModelClass
 import com.airbnb.epoxy.EpoxyModelWithHolder
 import me.androidbox.domain.entities.PlayerEntity
+import me.androidbox.home.R
 
 @SuppressLint("NonConstantResourceId")
 @EpoxyModelClass(layout = R.layout.list_item_player)

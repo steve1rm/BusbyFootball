@@ -1,8 +1,9 @@
-package me.androidbox.home
+package me.androidbox.home.listitems
 
 import android.view.View
 import android.widget.TextView
 import com.airbnb.epoxy.EpoxyHolder
+import me.androidbox.home.R
 
 class ListItemPlayerHolder : EpoxyHolder() {
 

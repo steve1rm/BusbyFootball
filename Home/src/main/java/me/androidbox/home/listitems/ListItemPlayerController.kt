@@ -1,4 +1,4 @@
-package me.androidbox.home
+package me.androidbox.home.listitems
 
 import com.airbnb.epoxy.TypedEpoxyController
 import me.androidbox.domain.entities.PlayerEntity

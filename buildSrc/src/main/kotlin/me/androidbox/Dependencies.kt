@@ -34,6 +34,8 @@ object Libraries {
     const val epoxy = "com.airbnb.android:epoxy:${Versions.epoxyVersion}"
     const val navigationFragmentKts = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}"
     const val navigationUiKts = "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}"
+    const val viewModelKts = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
+    const val liveDataKts = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
 }
 
 object TestLibraries {
