@@ -41,7 +41,7 @@ android {
 
 dependencies {
     implementation(me.androidbox.Libraries.kotlinStdlib)
-
+    implementation(me.androidbox.Libraries.viewModelKts)
     implementation(me.androidbox.Libraries.dagger)
 
     testImplementation(me.androidbox.TestLibraries.junit)
