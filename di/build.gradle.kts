@@ -12,8 +12,10 @@ android {
     defaultConfig {
         minSdkVersion(me.androidbox.Versions.minSdkVersion)
         targetSdkVersion(me.androidbox.Versions.targetSdkVersion)
+/*
         versionCode = 1
         versionName = "1.0"
+*/
 
         consumerProguardFiles("consumer-rules.pro")
     }

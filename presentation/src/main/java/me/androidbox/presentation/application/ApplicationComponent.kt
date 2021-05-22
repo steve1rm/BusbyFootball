@@ -3,15 +3,13 @@ package me.androidbox.presentation.application
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import me.androidbox.appdependencies.ApplicationDependencies
 import me.androidbox.data.di.PlayerModule
-import me.androidbox.data.requests.imp.RequestPlayersImp
 import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [PlayerModule::class])
-interface ApplicationComponent {
-
-    fun requestPlayersImp(): RequestPlayersImp
+interface ApplicationComponent : ApplicationDependencies {
 
     @Component.Factory
     interface Factory {

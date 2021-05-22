@@ -1,5 +1,6 @@
+
 plugins {
-    id(me.androidbox.Plugins.androidApplication)
+    id(me.androidbox.Plugins.androidLibrary)
     kotlin(me.androidbox.Plugins.kotlinAndroid)
     kotlin(me.androidbox.Plugins.kotlinKapt)
 }
@@ -9,24 +10,24 @@ android {
     buildToolsVersion(me.androidbox.Versions.buildToolsVersion)
 
     defaultConfig {
-        applicationId = "me.androidbox.presentation"
         minSdkVersion(me.androidbox.Versions.minSdkVersion)
         targetSdkVersion(me.androidbox.Versions.targetSdkVersion)
+/*
         versionCode = 1
         versionName = "1.0"
+*/
 
-     //   testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
-        getByName("debug") {
+        getByName("release") {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
 
-        getByName("release") {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        getByName("debug") {
+            isMinifyEnabled = false
         }
     }
 
@@ -41,21 +42,14 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
     implementation(project(":data"))
-    implementation(project(":appDependencies"))
 
     implementation(me.androidbox.Libraries.kotlinStdlib)
-    implementation(me.androidbox.Libraries.coreKtx)
-    implementation(me.androidbox.Libraries.appcompat)
-    implementation(me.androidbox.Libraries.material)
+    implementation(me.androidbox.Libraries.viewModelKts)
     implementation(me.androidbox.Libraries.dagger)
-    implementation(me.androidbox.Libraries.constraintlayout)
-
-    kapt(me.androidbox.Libraries.daggerCompiler)
 
     testImplementation(me.androidbox.TestLibraries.junit)
-
-    androidTestImplementation(me.androidbox.TestLibraries.extJunit)
-    androidTestImplementation(me.androidbox.TestLibraries.espressoCore)
+    testImplementation(me.androidbox.TestLibraries.truth)
+    testImplementation(me.androidbox.TestLibraries.coreTesting)
+    testImplementation(me.androidbox.TestLibraries.mockitoKotlin)
 }

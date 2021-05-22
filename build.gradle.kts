@@ -1,7 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
 
-    val kotlin_version by extra("1.5.0")
     repositories {
         google()
         mavenCentral()
@@ -10,10 +9,10 @@ buildscript {
 
     dependencies {
         classpath(me.androidbox.Plugins.kotlinGradlePlugin)
-        classpath(me.androidbox.Plugins.androidGradlePlugin)
+        classpath("com.android.tools.build:gradle:7.0.0-beta02")
+        // classpath(me.androidbox.Plugins.androidGradlePlugin)
         classpath(me.androidbox.Plugins.gradleAndroidJunitJacocoPlugin)
         classpath(me.androidbox.Plugins.navigationSafeArgsGradlePlugin)
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
 

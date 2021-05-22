@@ -3,15 +3,15 @@ package me.androidbox
 
 object Versions {
     /** Android */
-    const val buildToolsVersion = "30.0.0"
+    const val buildToolsVersion = "30.0.2"
     const val androidLibraryVersion = "30.0.0"
     const val minSdkVersion = 21
     const val targetSdkVersion = 30
     const val compileSdkVersion = 30
     const val versionCode = 1
     const val versionName = "1.0"
-    const val kotlinVersion = "1.4.30"
-    const val gradleVersion = "4.2.1"
+    const val kotlinVersion = "1.5.0"
+    const val gradleVersion = "7.0"
     const val appcompatVersion = "1.2.0"
     const val corektxVersion = "1.3.2"
     const val materialVersion = "1.3.0"
@@ -21,9 +21,9 @@ object Versions {
     /** Third party */
     const val timberVersion = "4.7.1"
     const val retrofitVersion = "2.9.0"
-    const val moshiVersion = "1.11.0"
+    const val moshiVersion = "1.12.0"
     const val converterMoshiVersion = "2.9.0"
-    const val daggerVersion = "2.32"
+    const val daggerVersion = "2.34"
     const val okhttpVersion = "3.12.1"
     const val rxjavaVersion = "3.0.10"
     const val rxAndroidVersion = "3.0.0"
