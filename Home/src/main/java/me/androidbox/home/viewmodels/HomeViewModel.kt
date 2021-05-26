@@ -11,7 +11,7 @@ import me.androidbox.home.items.PlayerItem
 import me.androidbox.home.state.HomeViewState
 import javax.inject.Inject
 
-class HomeViewModel @Inject constructor(private val playersInteractor: PlayersInteractor) : ViewModel() {
+class HomeViewModel @Inject constructor(playersInteractor: PlayersInteractor) : ViewModel() {
 
     private val homeViewStateMutableLiveData = MutableLiveData<HomeViewState>(HomeViewState.HomeViewStateLoading)
     val homeViewStateLiveData : LiveData<HomeViewState> = homeViewStateMutableLiveData
@@ -25,6 +25,29 @@ class HomeViewModel @Inject constructor(private val playersInteractor: PlayersIn
             }
             .subscribeBy(
                 onSuccess = { listOfPlayerEntity ->
+                    val listOfPlayerItems = mutableListOf<PlayerItem>()
+
+                    listOfPlayerEntity.map { playerEntity ->
+                        listOfPlayerItems.add(PlayerItem(
+                            playerEntity.playerId,
+                            playerEntity.firstName,
+                            playerEntity.lastName,
+                            playerEntity.birthday,
+                            playerEntity.age,
+                            playerEntity.weight,
+                            playerEntity.height))
+                    }
+
+                    homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoaded(listOfPlayerItems)
+                },
+                onError = {
+                    homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateError(it.localizedMessage ?: "")
+                }
+            )
+    }
+}
+
+/* FIXME Not creating a list
                     val listOfPlayerItems = generateSequence {
                         listOfPlayerEntity.map { playerEntity ->
                             PlayerItem(
@@ -37,12 +60,4 @@ class HomeViewModel @Inject constructor(private val playersInteractor: PlayersIn
                                 playerEntity.height)
                         }
                     }.toList().flatten()
-
-                    homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoaded(listOfPlayerItems)
-                },
-                onError = {
-                    homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateError(it.localizedMessage ?: "")
-                }
-            )
-    }
-}
+*/

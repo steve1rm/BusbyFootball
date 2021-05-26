@@ -1,5 +1,5 @@
 plugins {
-    id(me.androidbox.Plugins.androidApplication)
+    id(me.androidbox.Plugins.androidLibrary)
     kotlin(me.androidbox.Plugins.kotlinAndroid)
     kotlin(me.androidbox.Plugins.kotlinKapt)
 }
@@ -9,11 +9,10 @@ android {
     buildToolsVersion(me.androidbox.Versions.buildToolsVersion)
 
     defaultConfig {
-        applicationId = "me.androidbox.presentation"
         minSdkVersion(me.androidbox.Versions.minSdkVersion)
         targetSdkVersion(me.androidbox.Versions.targetSdkVersion)
-        versionCode = 1
-        versionName = "1.0"
+//        versionCode = 1
+  //      versionName = "1.0"
 
      //   testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
     }
@@ -44,7 +43,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
     implementation(project(":appDependencies"))
-    implementation(project(":Home"))
+  //  implementation(project(":Home"))
 
     implementation(me.androidbox.Libraries.kotlinStdlib)
     implementation(me.androidbox.Libraries.coreKtx)

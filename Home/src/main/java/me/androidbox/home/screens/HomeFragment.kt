@@ -1,22 +1,19 @@
 package me.androidbox.home.screens
 
-import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import me.androidbox.appdependencies.ApplicationDependencies
-import me.androidbox.appdependencies.HasApplicationDependencies
 import me.androidbox.di.viewmodels.ViewModelFactory
-import me.androidbox.domain.entities.PlayerEntity
 import me.androidbox.home.components.inject
-import me.androidbox.home.listitems.ListItemPlayerController
 import me.androidbox.home.databinding.FragmentHomeBinding
+import me.androidbox.home.listitems.ListItemPlayerController
+import me.androidbox.home.state.HomeViewState
 import me.androidbox.home.viewmodels.HomeViewModel
 import javax.inject.Inject
 
@@ -32,16 +29,14 @@ class HomeFragment : Fragment() {
         ViewModelProvider(this, viewModelFactory)[HomeViewModel::class.java]
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
-        inject()
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         fragmentHomeBinding = FragmentHomeBinding.inflate(inflater, container, false)
 
         return fragmentHomeBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        inject()
 
         ListItemPlayerController = ListItemPlayerController()
 
@@ -52,8 +47,18 @@ class HomeFragment : Fragment() {
             addItemDecoration(DividerItemDecoration(requireContext(), LinearLayoutManager.VERTICAL))
         }
 
-        val listOfPlayers = listOf(PlayerEntity(1, "steve", "mason", "23033", 34, 45, 65))
-
-        ListItemPlayerController.setData(listOfPlayers)
+        homeViewModel.homeViewStateLiveData.observe(viewLifecycleOwner, { homeViewState: HomeViewState ->
+            when(homeViewState) {
+                HomeViewState.HomeViewStateLoading -> {
+                    Log.d(HomeFragment::class.simpleName, "Loading")
+                }
+                is HomeViewState.HomeViewStateLoaded -> {
+                    ListItemPlayerController.setData(homeViewState.listOfPlayers)
+                }
+                is HomeViewState.HomeViewStateError -> {
+                    Log.d(HomeFragment::class.simpleName, homeViewState.message)
+                }
+            }
+        })
     }
 }
