@@ -18,6 +18,7 @@ interface HomeComponent {
 }
 
 fun HomeFragment.inject() {
-    DaggerHomeComponent.factory().create(requireContext().getApplicationDependencies())
+    DaggerHomeComponent.factory()
+        .create(requireContext().getApplicationDependencies())
         .inject(this)
 }

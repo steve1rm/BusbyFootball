@@ -7,11 +7,11 @@ plugins {
 
 android {
     compileSdkVersion(me.androidbox.Versions.compileSdkVersion)
-    buildToolsVersion(me.androidbox.Versions.buildToolsVersion)
+    buildToolsVersion = me.androidbox.Versions.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion(me.androidbox.Versions.minSdkVersion)
-        targetSdkVersion(me.androidbox.Versions.targetSdkVersion)
+        minSdk = me.androidbox.Versions.minSdkVersion
+        targetSdk = me.androidbox.Versions.targetSdkVersion
 /*
         versionCode = 1
         versionName = "1.0"

@@ -1,5 +1,6 @@
 package me.androidbox.home.screens
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +20,7 @@ import me.androidbox.home.databinding.FragmentHomeBinding
 import me.androidbox.home.viewmodels.HomeViewModel
 import javax.inject.Inject
 
-class HomeFragment : Fragment(), HasApplicationDependencies {
+class HomeFragment : Fragment() {
 
     private lateinit var ListItemPlayerController: ListItemPlayerController
     private lateinit var fragmentHomeBinding: FragmentHomeBinding
@@ -33,13 +34,14 @@ class HomeFragment : Fragment(), HasApplicationDependencies {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
+        inject()
         fragmentHomeBinding = FragmentHomeBinding.inflate(inflater, container, false)
 
         return fragmentHomeBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        inject()
+
 
         ListItemPlayerController = ListItemPlayerController()
 
@@ -53,9 +55,5 @@ class HomeFragment : Fragment(), HasApplicationDependencies {
         val listOfPlayers = listOf(PlayerEntity(1, "steve", "mason", "23033", 34, 45, 65))
 
         ListItemPlayerController.setData(listOfPlayers)
-    }
-
-    override fun getApplicationDependencies(): ApplicationDependencies {
-        TODO("Not yet implemented")
     }
 }

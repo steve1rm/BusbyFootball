@@ -8,6 +8,6 @@ interface ApplicationDependencies {
 }
 
 fun Context.getApplicationDependencies(): ApplicationDependencies {
-    return (applicationContext as? HasApplicationDependencies)?.getApplicationDependencies() ?:
-            throw IllegalStateException("Has to implementation `HasApplicationDependencies`")
+    return (applicationContext as? HasApplicationDependencies)?.getApplicationDependencies()
+        ?: throw IllegalStateException("Application must implement `HasApplicationDependencies`")
 }

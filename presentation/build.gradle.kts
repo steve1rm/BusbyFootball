@@ -44,6 +44,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
     implementation(project(":appDependencies"))
+    implementation(project(":Home"))
 
     implementation(me.androidbox.Libraries.kotlinStdlib)
     implementation(me.androidbox.Libraries.coreKtx)
@@ -51,6 +52,8 @@ dependencies {
     implementation(me.androidbox.Libraries.material)
     implementation(me.androidbox.Libraries.dagger)
     implementation(me.androidbox.Libraries.constraintlayout)
+    implementation(me.androidbox.Libraries.navigationUiKts)
+    implementation(me.androidbox.Libraries.navigationFragmentKts)
 
     kapt(me.androidbox.Libraries.daggerCompiler)
 
