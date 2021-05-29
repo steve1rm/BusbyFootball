@@ -1,4 +1,4 @@
-package me.androidbox.appcomponent.component
+package me.androidbox.appcomponent
 
 import android.content.Context
 import dagger.BindsInstance
