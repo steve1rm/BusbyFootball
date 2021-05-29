@@ -1,6 +1,7 @@
 package me.androidbox.home.application
 
 import android.app.Application
+import me.androidbox.appcomponent.component.DaggerApplicationComponent
 import me.androidbox.appdependencies.ApplicationDependencies
 import me.androidbox.appdependencies.HasApplicationDependencies
 

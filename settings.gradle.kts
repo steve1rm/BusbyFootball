@@ -1,5 +1,6 @@
 include(":domain", ":data", ":presentation")
 rootProject.name = "BusbyFootball"
-include(":Home")
+include(":home")
 include(":di")
 include(":appDependencies")
+include(":appComponent")

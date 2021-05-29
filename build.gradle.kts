@@ -9,10 +9,10 @@ buildscript {
 
     dependencies {
         classpath(me.androidbox.Plugins.kotlinGradlePlugin)
-        classpath("com.android.tools.build:gradle:7.0.0-beta02")
-        // classpath(me.androidbox.Plugins.androidGradlePlugin)
+        classpath(me.androidbox.Plugins.androidGradlePlugin)
         classpath(me.androidbox.Plugins.gradleAndroidJunitJacocoPlugin)
         classpath(me.androidbox.Plugins.navigationSafeArgsGradlePlugin)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10")
     }
 }
 

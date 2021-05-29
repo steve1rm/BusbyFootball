@@ -12,12 +12,12 @@ android {
 
     defaultConfig {
         applicationId = "me.androidbox.home"
-        minSdkVersion(me.androidbox.Versions.minSdkVersion)
-        targetSdkVersion(me.androidbox.Versions.targetSdkVersion)
+        minSdk = me.androidbox.Versions.minSdkVersion
+        targetSdk = me.androidbox.Versions.targetSdkVersion
         versionCode = 1
         versionName = "1.0"
 
-//        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":di"))
     implementation(project(":appDependencies"))
+    implementation(project(":appComponent"))
     implementation(project(":data"))
 
     implementation(me.androidbox.Libraries.kotlinStdlib)

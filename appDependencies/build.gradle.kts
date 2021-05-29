@@ -12,10 +12,6 @@ android {
     defaultConfig {
         minSdk = me.androidbox.Versions.minSdkVersion
         targetSdk = me.androidbox.Versions.targetSdkVersion
-/*
-        versionCode = 1
-        versionName = "1.0"
-*/
 
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -42,7 +38,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
+    api(project(":data"))
 
     implementation(me.androidbox.Libraries.kotlinStdlib)
     implementation(me.androidbox.Libraries.viewModelKts)

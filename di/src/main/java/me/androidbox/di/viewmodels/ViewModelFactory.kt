@@ -6,7 +6,6 @@ import java.lang.Exception
 import javax.inject.Inject
 import javax.inject.Provider
 
-
 class ViewModelFactory @Inject constructor(
     private val classToViewModel: @JvmSuppressWildcards Map<Class<out  ViewModel>, Provider<ViewModel>>)
     : ViewModelProvider.Factory {
