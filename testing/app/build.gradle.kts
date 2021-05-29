@@ -43,9 +43,12 @@ dependencies {
 
     implementation(Libraries.kotlinStdlib)
     implementation(Libraries.dagger)
+    implementation(Libraries.rxJava)
+    implementation(Libraries.material)
+
     kapt(Libraries.daggerCompiler)
 
-    testImplementation(TestLibraries.junit)
-    androidTestImplementation(TestLibraries.extJunit)
-    androidTestImplementation(TestLibraries.espressoCore)
+    implementation(TestLibraries.junit)
+    implementation(TestLibraries.extJunit)
+    implementation(TestLibraries.espressoCore)
 }

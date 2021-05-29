@@ -57,7 +57,7 @@ dependencies {
     implementation(Libraries.converterMoshi)
     kapt(Libraries.moshiKotlinCodegen)
     implementation(Libraries.rxJava)
-    implementation(Libraries.rxKotlin)
+    // implementation(Libraries.rxKotlin)
     implementation(Libraries.dagger)
 
     testImplementation(TestLibraries.junit)
