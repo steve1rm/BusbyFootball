@@ -6,3 +6,10 @@ Displayes the player and leagues of popular football teams
 [![codecov](https://codecov.io/gh/steve1rm/BusbyFootball/branch/master/graph/badge.svg?token=LnlYMWrER4)](https://codecov.io/gh/steve1rm/BusbyFootball)
 
 - [x] Clean Architecture
+- [x] Dagger2
+- [x] RxJava3
+- [x] Epoxy
+- [x] Jetpack navigation components
+- [x] ViewModels
+- [x] LiveData 
+
