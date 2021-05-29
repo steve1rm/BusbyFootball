@@ -15,10 +15,11 @@ android {
     defaultConfig {
         minSdkVersion(Versions.minSdkVersion)
         targetSdkVersion(Versions.targetSdkVersion)
+/*
         versionCode = 1
         versionName = "1.0"
+*/
 
-        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
         consumerProguardFiles("consumer-rules.pro")
 
         buildConfigField("String", "SPORTDATA_API_KEY", "\"${"a3077d20-5b3c-11eb-9967-9f0839e532f7"}\"")
@@ -56,7 +57,7 @@ dependencies {
     implementation(Libraries.converterMoshi)
     kapt(Libraries.moshiKotlinCodegen)
     implementation(Libraries.rxJava)
-    implementation(Libraries.rxKotlin)
+    // implementation(Libraries.rxKotlin)
     implementation(Libraries.dagger)
 
     testImplementation(TestLibraries.junit)
