@@ -36,6 +36,7 @@ object Libraries {
     const val navigationUiKts = "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}"
     const val viewModelKts = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
     const val liveDataKts = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
+    const val fragment = "androidx.fragment:fragment:${Versions.fragmentTestingVersion}"
 }
 
 object TestLibraries {
@@ -46,4 +47,5 @@ object TestLibraries {
     const val assertjCore = "org.assertj:assertj-core:${Versions.assertJCoreVersion}"
     const val extJunit = "androidx.test.ext:junit:${Versions.androidxJunitVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
+    const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTestingVersion}"
 }
