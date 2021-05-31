@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation(project(":appDependencies"))
+    implementation(project(":data"))
 
     implementation(Libraries.kotlinStdlib)
     implementation(Libraries.dagger)

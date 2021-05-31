@@ -19,6 +19,6 @@ class HomeFragmentTest {
 
     @Test
     fun shouldLaunchFootballApplication() {
-         launchFragment<HomeFragment>()
+         launchFragmentInContainer<HomeFragment>()
     }
 }

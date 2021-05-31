@@ -55,12 +55,13 @@ android {
 }
 
 dependencies {
-    implementation(project(":domain"))
-    implementation(project(":di"))
     implementation(project(":appDependencies"))
-    implementation(project(":appComponent"))
-    implementation(project(":data"))
+    implementation(project(":di"))
+    implementation(project(":domain"))
     implementation(project(":testing:app"))
+    implementation(project(":data"))
+    implementation(project(":appComponent"))
+
 
     implementation(Libraries.kotlinStdlib)
     implementation(Libraries.coreKtx)
@@ -83,6 +84,6 @@ dependencies {
 
     testImplementation(TestLibraries.junit)
     androidTestImplementation(TestLibraries.extJunit)
-    androidTestImplementation(TestLibraries.espressoCore)
-    androidTestImplementation(TestLibraries.fragmentTesting)
+    debugImplementation(TestLibraries.espressoCore)
+    debugImplementation(TestLibraries.fragmentTesting)
 }
