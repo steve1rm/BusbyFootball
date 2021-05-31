@@ -58,7 +58,7 @@ dependencies {
     implementation(project(":appDependencies"))
     implementation(project(":di"))
     implementation(project(":domain"))
-    implementation(project(":testing:app"))
+    androidTestImplementation(project(":testing:app"))
     implementation(project(":data"))
     implementation(project(":appComponent"))
 
