@@ -3,7 +3,7 @@ package me.androidbox
 
 object Versions {
     /** Android */
-    const val buildToolsVersion = "30.0.2"
+    const val buildToolsVersion = "30.0.3"
     const val androidLibraryVersion = "30.0.0"
     const val minSdkVersion = 21
     const val targetSdkVersion = 30
