@@ -78,6 +78,7 @@ dependencies {
     implementation(Libraries.rxJava)
     implementation(Libraries.rxKotlin)
     implementation(Libraries.rxAndroid)
+    implementation(Libraries.coroutines)
 
     kapt(Libraries.epoxyProcessor)
     kapt(Libraries.daggerCompiler)

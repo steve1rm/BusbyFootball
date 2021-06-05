@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.test.platform.app.InstrumentationRegistry
 import me.androidbox.appdependencies.ApplicationDependencies
 import me.androidbox.appdependencies.HasApplicationDependencies
+import me.androidbox.home.R
 
 class TestApplication : Application(), HasApplicationDependencies {
 
@@ -17,6 +18,8 @@ class TestApplication : Application(), HasApplicationDependencies {
     override fun onCreate() {
         super.onCreate()
         testApplicationComponent = DaggerTestApplicationComponent.factory().create(this)
+
+        setTheme(R.style.Theme_BusbyFootball)
     }
 
     override fun getApplicationDependencies(): ApplicationDependencies {

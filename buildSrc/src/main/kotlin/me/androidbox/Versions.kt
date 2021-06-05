@@ -37,6 +37,7 @@ object Versions {
     const val rxpermissionsVersion = "0.11"
     const val epoxyVersion = "4.6.1"
     const val navigationVersion = "2.3.5"
+    const val kotlinxCoroutinesVersion = "1.5.0"
 
     /** Testing */
     const val jUnitVersion = "4.13.1"

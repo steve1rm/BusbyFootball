@@ -4,5 +4,5 @@ import io.reactivex.rxjava3.core.Single
 import me.androidbox.domain.entities.PlayerEntity
 
 interface PlayersInteractor {
-    fun getListOfPlayersByCountryId(countryId: Int): Single<List<PlayerEntity>>
+    suspend fun getListOfPlayersByCountryId(countryId: Int): List<PlayerEntity>
 }

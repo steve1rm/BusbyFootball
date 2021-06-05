@@ -42,6 +42,7 @@ dependencies {
     implementation(project(":appComponent"))
     implementation(project(":data"))
     implementation(project(":domain"))
+    implementation(project(":home"))
 
     implementation(Libraries.kotlinStdlib)
     implementation(Libraries.dagger)

@@ -17,17 +17,16 @@ interface FootballServices {
     @GET(Endpoints.PLAYERS_BY_COUNTY_ID)
     fun getListOfPlayersByCountryId(
             @Query("apikey") apiKey: String,
-            @Query("counter_id") countryId: Int) : Single<PlayerDataModel>
+            @Query("counter_id") countryId: Int) : PlayerDataModel
 }
-
 
 @Singleton
 class MockFootballServices @Inject constructor() : FootballServices {
     override fun getListOfPlayersByCountryId(
         apiKey: String,
         countryId: Int
-    ): Single<PlayerDataModel> {
-        return Single.just(PlayerFactory.createPlayerDataModel())
+    ): PlayerDataModel {
+        return PlayerFactory.createPlayerDataModel()
     }
 }
 

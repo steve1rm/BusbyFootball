@@ -9,16 +9,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.compileSdkVersion)
-    buildToolsVersion(Versions.buildToolsVersion)
+    compileSdk = Versions.compileSdkVersion
+    buildToolsVersion = Versions.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion(Versions.minSdkVersion)
-        targetSdkVersion(Versions.targetSdkVersion)
-/*
-        versionCode = 1
-        versionName = "1.0"
-*/
+        minSdk = Versions.minSdkVersion
+        targetSdk =Versions.targetSdkVersion
 
         consumerProguardFiles("consumer-rules.pro")
 
@@ -48,6 +44,7 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    testImplementation(project(":testing:app"))
 
     implementation(Libraries.kotlinStdlib)
 
@@ -57,7 +54,6 @@ dependencies {
     implementation(Libraries.converterMoshi)
     kapt(Libraries.moshiKotlinCodegen)
     implementation(Libraries.rxJava)
-    // implementation(Libraries.rxKotlin)
     implementation(Libraries.dagger)
 
     testImplementation(TestLibraries.junit)

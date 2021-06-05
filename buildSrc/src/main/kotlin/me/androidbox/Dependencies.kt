@@ -37,6 +37,7 @@ object Libraries {
     const val viewModelKts = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
     const val liveDataKts = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
     const val fragment = "androidx.fragment:fragment:${Versions.fragmentTestingVersion}"
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinxCoroutinesVersion}"
 }
 
 object TestLibraries {
@@ -48,4 +49,5 @@ object TestLibraries {
     const val extJunit = "androidx.test.ext:junit:${Versions.androidxJunitVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
     const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTestingVersion}"
+    const val coroutinesTesting = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinxCoroutinesVersion}"
 }
