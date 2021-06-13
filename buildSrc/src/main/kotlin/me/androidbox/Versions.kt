@@ -24,7 +24,7 @@ object Versions {
     const val moshiVersion = "1.12.0"
     const val converterMoshiVersion = "2.9.0"
     const val daggerVersion = "2.34"
-    const val okhttpVersion = "3.12.1"
+    const val okhttpVersion = "4.9.1"
     const val rxjavaVersion = "3.0.10"
     const val rxAndroidVersion = "3.0.0"
     const val rxkotlinVersion = "3.0.1"

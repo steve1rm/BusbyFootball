@@ -21,6 +21,7 @@ object Libraries {
     const val moshi = "com.squareup.moshi:moshi:${Versions.moshiVersion}"
     const val moshiKotlinCodegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshiVersion}"
     const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.converterMoshiVersion}"
+    const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpVersion}"
     const val rxJava = "io.reactivex.rxjava3:rxjava:${Versions.rxjavaVersion}"
     const val rxKotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.rxkotlinVersion}"
     const val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroidVersion}"

@@ -49,12 +49,14 @@ dependencies {
     implementation(Libraries.kotlinStdlib)
 
     /* TODO change to networking() to bring them all in together */
-    implementation(Libraries.retrofit)
-    implementation(Libraries.moshi)
+    api(Libraries.retrofit)
+    api(Libraries.moshi)
     implementation(Libraries.converterMoshi)
+    api(Libraries.loggingInterceptor)
     kapt(Libraries.moshiKotlinCodegen)
     implementation(Libraries.rxJava)
     implementation(Libraries.dagger)
+    kapt(Libraries.daggerCompiler)
 
     testImplementation(TestLibraries.junit)
     testImplementation(TestLibraries.truth)
