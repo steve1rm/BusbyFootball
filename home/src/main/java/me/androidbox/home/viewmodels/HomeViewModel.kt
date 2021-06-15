@@ -21,8 +21,8 @@ class HomeViewModel @Inject constructor(playersInteractor: PlayersInteractor) : 
     val homeViewStateLiveData : LiveData<HomeViewState> = homeViewStateMutableLiveData
 
     init {
-        viewModelScope.launch {
-            homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoading
+        viewModelScope.launch(Dispatchers.IO) {
+      //      homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoading
             try {
                 val listOfPlayerEntity = playersInteractor.getListOfPlayersByCountryId(42)
                 val listOfPlayerItems = mutableListOf<PlayerItem>()
@@ -38,10 +38,10 @@ class HomeViewModel @Inject constructor(playersInteractor: PlayersInteractor) : 
                         playerEntity.height))
                 }
 
-                homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoaded(listOfPlayerItems)
+             //   homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoaded(listOfPlayerItems)
             }
             catch (exception: Exception) {
-                homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateError(exception.localizedMessage ?: "Unknown")
+                /*homeViewStateMutableLiveData.value = */ HomeViewState.HomeViewStateError(exception.localizedMessage ?: "Unknown")
             }
         }
     }

@@ -18,7 +18,7 @@ android {
 
         consumerProguardFiles("consumer-rules.pro")
 
-        buildConfigField("String", "SPORTDATA_API_KEY", "\"${"a3077d20-5b3c-11eb-9967-9f0839e532f7"}\"")
+        buildConfigField("String", "SPORTDATA_API_KEY", "\"${"73f02640-cd6d-11eb-96c6-4f1d21d195f1"}\"")
     }
 
     buildTypes {
@@ -55,6 +55,7 @@ dependencies {
     api(Libraries.loggingInterceptor)
     kapt(Libraries.moshiKotlinCodegen)
     implementation(Libraries.rxJava)
+    implementation(Libraries.coroutines)
     implementation(Libraries.dagger)
     kapt(Libraries.daggerCompiler)
 

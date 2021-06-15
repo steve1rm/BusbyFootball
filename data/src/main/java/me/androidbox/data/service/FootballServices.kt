@@ -15,20 +15,22 @@ import kotlin.random.Random.Default.nextInt
 interface FootballServices {
 
     @GET(Endpoints.PLAYERS_BY_COUNTY_ID)
-    fun getListOfPlayersByCountryId(
+    suspend fun getListOfPlayersByCountryId(
             @Query("apikey") apiKey: String,
-            @Query("counter_id") countryId: Int) : PlayerDataModel
+            @Query("country_id") countryId: Int) : PlayerDataModel
 }
 
+/*
 @Singleton
 class MockFootballServices @Inject constructor() : FootballServices {
-    override fun getListOfPlayersByCountryId(
+    override suspend fun getListOfPlayersByCountryId(
         apiKey: String,
         countryId: Int
     ): PlayerDataModel {
         return PlayerFactory.createPlayerDataModel()
     }
 }
+*/
 
 /** Only for mocking the data remove after */
 object PlayerFactory {

@@ -7,6 +7,6 @@ package me.androidbox.data.service
 
 object Endpoints {
     const val BASE_URL = "https://app.sportdataapi.com"
-    const val SPORTS_API = "api/v1/soccer/"
+    const val SPORTS_API = "/api/v1/soccer/"
     const val PLAYERS_BY_COUNTY_ID = "${SPORTS_API}players"
 }
