@@ -21,6 +21,7 @@ object Libraries {
     const val moshi = "com.squareup.moshi:moshi:${Versions.moshiVersion}"
     const val moshiKotlinCodegen = "com.squareup.moshi:moshi-kotlin-codegen:${Versions.moshiVersion}"
     const val converterMoshi = "com.squareup.retrofit2:converter-moshi:${Versions.converterMoshiVersion}"
+    const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttpVersion}"
     const val rxJava = "io.reactivex.rxjava3:rxjava:${Versions.rxjavaVersion}"
     const val rxKotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.rxkotlinVersion}"
     const val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroidVersion}"
@@ -36,6 +37,8 @@ object Libraries {
     const val navigationUiKts = "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}"
     const val viewModelKts = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
     const val liveDataKts = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleVersion}"
+    const val fragment = "androidx.fragment:fragment:${Versions.fragmentTestingVersion}"
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinxCoroutinesVersion}"
 }
 
 object TestLibraries {
@@ -46,4 +49,6 @@ object TestLibraries {
     const val assertjCore = "org.assertj:assertj-core:${Versions.assertJCoreVersion}"
     const val extJunit = "androidx.test.ext:junit:${Versions.androidxJunitVersion}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espressoCoreVersion}"
+    const val fragmentTesting = "androidx.fragment:fragment-testing:${Versions.fragmentTestingVersion}"
+    const val coroutinesTesting = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinxCoroutinesVersion}"
 }

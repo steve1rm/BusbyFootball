@@ -3,9 +3,9 @@ package me.androidbox.home.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.kotlin.subscribeBy
-import io.reactivex.rxjava3.schedulers.Schedulers
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import me.androidbox.di.scope.ScreenScope
 import me.androidbox.domain.interactors.PlayersInteractor
 import me.androidbox.home.items.PlayerItem
@@ -21,33 +21,30 @@ class HomeViewModel @Inject constructor(playersInteractor: PlayersInteractor) : 
     val homeViewStateLiveData : LiveData<HomeViewState> = homeViewStateMutableLiveData
 
     init {
-        playersInteractor.getListOfPlayersByCountryId(42)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe {
-                homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoading
-            }
-            .subscribeBy(
-                onSuccess = { listOfPlayerEntity ->
-                    val listOfPlayerItems = mutableListOf<PlayerItem>()
+        viewModelScope.launch {
+            homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoading
 
-                    listOfPlayerEntity.map { playerEntity ->
-                        listOfPlayerItems.add(PlayerItem(
-                            playerEntity.playerId,
-                            playerEntity.firstName,
-                            playerEntity.lastName,
-                            playerEntity.birthday,
-                            playerEntity.age,
-                            playerEntity.weight,
-                            playerEntity.height))
-                    }
+            try {
+                val listOfPlayerEntity = playersInteractor.getListOfPlayersByCountryId(48)
+                val listOfPlayerItems = mutableListOf<PlayerItem>()
 
-                    homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoaded(listOfPlayerItems)
-                },
-                onError = {
-                    homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateError(it.localizedMessage ?: "")
+                listOfPlayerEntity.map { playerEntity ->
+                    listOfPlayerItems.add(PlayerItem(
+                        playerEntity.playerId,
+                        playerEntity.firstName,
+                        playerEntity.lastName,
+                        playerEntity.birthday,
+                        playerEntity.age,
+                        playerEntity.weight,
+                        playerEntity.height))
                 }
-            )
+
+                homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoaded(listOfPlayerItems)
+            }
+            catch (exception: Exception) {
+                homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateError(exception.localizedMessage ?: "Unknown")
+            }
+        }
     }
 }
 

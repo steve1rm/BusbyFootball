@@ -3,7 +3,7 @@ package me.androidbox
 
 object Versions {
     /** Android */
-    const val buildToolsVersion = "30.0.2"
+    const val buildToolsVersion = "30.0.3"
     const val androidLibraryVersion = "30.0.0"
     const val minSdkVersion = 21
     const val targetSdkVersion = 30
@@ -24,7 +24,7 @@ object Versions {
     const val moshiVersion = "1.12.0"
     const val converterMoshiVersion = "2.9.0"
     const val daggerVersion = "2.34"
-    const val okhttpVersion = "3.12.1"
+    const val okhttpVersion = "4.9.1"
     const val rxjavaVersion = "3.0.10"
     const val rxAndroidVersion = "3.0.0"
     const val rxkotlinVersion = "3.0.1"
@@ -37,6 +37,7 @@ object Versions {
     const val rxpermissionsVersion = "0.11"
     const val epoxyVersion = "4.6.1"
     const val navigationVersion = "2.3.5"
+    const val kotlinxCoroutinesVersion = "1.5.0"
 
     /** Testing */
     const val jUnitVersion = "4.13.1"
@@ -54,10 +55,9 @@ object Versions {
     const val androidxCoreVersion = "1.1.0"
     const val androidxRulesVersion = "1.1.0"
     const val okhttp3IdlingResourceVersion = "1.0.0"
-    const val fragmentTestingVersion = "1.1.0"
+    const val fragmentTestingVersion = "1.2.4"
     const val idlingConcurrentVersion = "3.1.0"
     const val espressoIdlingResourceVersion = "3.1.1"
     const val kakaoVersion = "2.3.0"
     const val assertJCoreVersion = "3.19.0"
-
 }

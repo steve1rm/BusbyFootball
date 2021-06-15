@@ -1,13 +1,10 @@
 package me.androidbox.data.service
 
-import io.reactivex.rxjava3.core.Single
 import me.androidbox.data.models.PlayerDataModel
 import me.androidbox.data.models.PlayerModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 import java.util.*
-import javax.inject.Inject
-import javax.inject.Singleton
 import kotlin.random.Random.Default.nextBoolean
 import kotlin.random.Random.Default.nextFloat
 import kotlin.random.Random.Default.nextInt
@@ -15,20 +12,9 @@ import kotlin.random.Random.Default.nextInt
 interface FootballServices {
 
     @GET(Endpoints.PLAYERS_BY_COUNTY_ID)
-    fun getListOfPlayersByCountryId(
+    suspend fun getListOfPlayersByCountryId(
             @Query("apikey") apiKey: String,
-            @Query("counter_id") countryId: Int) : Single<PlayerDataModel>
-}
-
-
-@Singleton
-class MockFootballServices @Inject constructor() : FootballServices {
-    override fun getListOfPlayersByCountryId(
-        apiKey: String,
-        countryId: Int
-    ): Single<PlayerDataModel> {
-        return Single.just(PlayerFactory.createPlayerDataModel())
-    }
+            @Query("country_id") countryId: Int) : PlayerDataModel
 }
 
 /** Only for mocking the data remove after */

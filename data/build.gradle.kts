@@ -9,20 +9,16 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Versions.compileSdkVersion)
-    buildToolsVersion(Versions.buildToolsVersion)
+    compileSdk = Versions.compileSdkVersion
+    buildToolsVersion = Versions.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion(Versions.minSdkVersion)
-        targetSdkVersion(Versions.targetSdkVersion)
-/*
-        versionCode = 1
-        versionName = "1.0"
-*/
+        minSdk = Versions.minSdkVersion
+        targetSdk =Versions.targetSdkVersion
 
         consumerProguardFiles("consumer-rules.pro")
 
-        buildConfigField("String", "SPORTDATA_API_KEY", "\"${"a3077d20-5b3c-11eb-9967-9f0839e532f7"}\"")
+        buildConfigField("String", "SPORTDATA_API_KEY", "\"${"73f02640-cd6d-11eb-96c6-4f1d21d195f1"}\"")
     }
 
     buildTypes {
@@ -48,17 +44,20 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    testImplementation(project(":testing:app"))
 
     implementation(Libraries.kotlinStdlib)
 
     /* TODO change to networking() to bring them all in together */
-    implementation(Libraries.retrofit)
-    implementation(Libraries.moshi)
+    api(Libraries.retrofit)
+    api(Libraries.moshi)
     implementation(Libraries.converterMoshi)
+    api(Libraries.loggingInterceptor)
     kapt(Libraries.moshiKotlinCodegen)
     implementation(Libraries.rxJava)
-    // implementation(Libraries.rxKotlin)
+    implementation(Libraries.coroutines)
     implementation(Libraries.dagger)
+    kapt(Libraries.daggerCompiler)
 
     testImplementation(TestLibraries.junit)
     testImplementation(TestLibraries.truth)

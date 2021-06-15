@@ -1,11 +1,11 @@
 package me.androidbox.data.requests.imp
 
-import io.reactivex.rxjava3.core.Single
+import kotlinx.coroutines.withTimeout
 import me.androidbox.data.BuildConfig
 import me.androidbox.data.mappers.DomainMapperEntityToDomain
 import me.androidbox.data.service.FootballServices
-import me.androidbox.domain.interactors.PlayersInteractor
 import me.androidbox.domain.entities.PlayerEntity
+import me.androidbox.domain.interactors.PlayersInteractor
 import javax.inject.Inject
 
 class RequestPlayersImp @Inject constructor(
@@ -13,10 +13,11 @@ class RequestPlayersImp @Inject constructor(
         private val domainMapper: DomainMapperEntityToDomain
 ) : PlayersInteractor {
 
-    override fun getListOfPlayersByCountryId(countryId: Int): Single<List<PlayerEntity>> {
-        return footballServices.getListOfPlayersByCountryId(BuildConfig.SPORTDATA_API_KEY, 42)
-                .map { playerDataModel ->
-                    domainMapper.mapToDomain(playerDataModel)
-                }
+    override suspend fun getListOfPlayersByCountryId(countryId: Int): List<PlayerEntity> {
+        return withTimeout(10_000) {
+            val playerDataModel = footballServices.getListOfPlayersByCountryId(BuildConfig.SPORTDATA_API_KEY, 42)
+
+            domainMapper.mapToDomain(playerDataModel)
+        }
     }
 }

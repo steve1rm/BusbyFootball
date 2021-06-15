@@ -38,7 +38,8 @@ android {
 }
 
 dependencies {
-    api(project(":data"))
+    implementation(project(":data"))
+    implementation(project(":domain"))
 
     implementation(me.androidbox.Libraries.kotlinStdlib)
     implementation(me.androidbox.Libraries.viewModelKts)
