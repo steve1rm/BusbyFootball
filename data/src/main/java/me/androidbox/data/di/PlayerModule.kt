@@ -13,11 +13,6 @@ interface PlayerModule {
     @Binds
     fun provideRequestPlayersImp(requestPlayersImp: RequestPlayersImp): PlayersInteractor
 
-/*
-    @Binds
-    fun provideFootballServices(mockFootballServices: MockFootballServices): FootballServices
-*/
-
     @Binds
     fun provideDomainMapper(domainMapperImp: DomainMapperImp): DomainMapperEntityToDomain
 

@@ -25,7 +25,7 @@ class HomeViewModel @Inject constructor(playersInteractor: PlayersInteractor) : 
             homeViewStateMutableLiveData.value = HomeViewState.HomeViewStateLoading
 
             try {
-                val listOfPlayerEntity = playersInteractor.getListOfPlayersByCountryId(42)
+                val listOfPlayerEntity = playersInteractor.getListOfPlayersByCountryId(48)
                 val listOfPlayerItems = mutableListOf<PlayerItem>()
 
                 listOfPlayerEntity.map { playerEntity ->

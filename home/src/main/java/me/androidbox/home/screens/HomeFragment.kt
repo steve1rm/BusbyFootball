@@ -50,13 +50,18 @@ class HomeFragment : Fragment() {
         homeViewModel.homeViewStateLiveData.observe(viewLifecycleOwner, { homeViewState: HomeViewState ->
             when(homeViewState) {
                 HomeViewState.HomeViewStateLoading -> {
-                    Log.d(HomeFragment::class.simpleName, "Loading")
+                    fragmentHomeBinding.pbLoading.visibility = View.VISIBLE
+                    fragmentHomeBinding.txtErrorMessage.visibility = View.GONE
                 }
                 is HomeViewState.HomeViewStateLoaded -> {
+                    fragmentHomeBinding.pbLoading.visibility = View.GONE
+                    fragmentHomeBinding.txtErrorMessage.visibility = View.GONE
                     ListItemPlayerController.setData(homeViewState.listOfPlayers)
                 }
                 is HomeViewState.HomeViewStateError -> {
-                    Log.d(HomeFragment::class.simpleName, homeViewState.message)
+                    fragmentHomeBinding.pbLoading.visibility = View.GONE
+                    fragmentHomeBinding.txtErrorMessage.visibility = View.VISIBLE
+                    fragmentHomeBinding.txtErrorMessage.text = homeViewState.message
                 }
             }
         })

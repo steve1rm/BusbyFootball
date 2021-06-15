@@ -17,18 +17,6 @@ interface FootballServices {
             @Query("country_id") countryId: Int) : PlayerDataModel
 }
 
-/*
-@Singleton
-class MockFootballServices @Inject constructor() : FootballServices {
-    override suspend fun getListOfPlayersByCountryId(
-        apiKey: String,
-        countryId: Int
-    ): PlayerDataModel {
-        return PlayerFactory.createPlayerDataModel()
-    }
-}
-*/
-
 /** Only for mocking the data remove after */
 object PlayerFactory {
 
